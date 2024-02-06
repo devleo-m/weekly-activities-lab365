@@ -4,6 +4,7 @@ public class Main {
     static ArrayList<Curso> cursos = new ArrayList<>();
     static ArrayList<Professor> professores = new ArrayList<>();
     static ArrayList<String> cursosConcluidos = new ArrayList<>();
+
     public static void main(String[] args) {
         Scanner teclado = new Scanner(System.in);
         boolean loop = true;
@@ -74,6 +75,7 @@ public class Main {
             }
         }while (loop);
     }
+
     public static void adicionarCursos() {
         Scanner teclado = new Scanner(System.in);
 
@@ -172,6 +174,7 @@ public class Main {
             System.out.println("Índice inválido.");
         }
     }
+    
     public static void ListarConcluidos() {
         if (!cursosConcluidos.isEmpty()) {
             System.out.println("Cursos Concluídos:");
