@@ -4,11 +4,6 @@ public class Curso {
     String professor;
     int cargaHoraria = 0;
 
-    // Construtor padrão
-    public Curso() {
-        // Pode deixar vazio ou inicializar atributos com valores padrão se necessário
-    }
-
     // Construtor com parâmetros
     public Curso(String nome, String descricao, String professor, int cargaHoraria) {
         this.nome = nome;
