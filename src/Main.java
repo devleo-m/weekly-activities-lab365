@@ -66,6 +66,7 @@ public class Main {
                     break;
                 case "s":
                     System.out.println("Sair do programa...");
+                    ListarTudo();
                     return;
                 default:
                     System.out.println("Opcao invalida, voce deve digitar 'A', 'L', 'R' ou 'S'");
@@ -125,31 +126,31 @@ public class Main {
         int indice = teclado.nextInt();
         professores.get(indice).DescricaoProfessor();
     }
-    private static void excluirItemCursos() {
-        Scanner teclado = new Scanner(System.in);
-        ListarCursos();
-        System.out.println("Digite o índice do curso que deseja remover:");
-        int indiceCurso = teclado.nextInt();
-        if (indiceCurso >= 0 && indiceCurso < cursos.size()) {
-            cursos.remove(indiceCurso);
-            System.out.println("Curso removido com sucesso.");
-        } else {
-            System.out.println("indice invalido.");
+        private static void excluirItemCursos() {
+            Scanner teclado = new Scanner(System.in);
+            ListarCursos();
+            System.out.println("Digite o índice do curso que deseja remover:");
+            int indiceCurso = teclado.nextInt();
+            if (indiceCurso >= 0 && indiceCurso < cursos.size()) {
+                cursos.remove(indiceCurso);
+                System.out.println("Curso removido com sucesso.");
+            } else {
+                System.out.println("indice invalido.");
+            }
         }
-    }
-    private static void excluirItemProfessores() {
-        Scanner teclado = new Scanner(System.in);
-        ListatProfessores();
-        System.out.println("Digite o indice do professor que deseja remover:");
-        int indiceProfessor = teclado.nextInt();
-
-        if (indiceProfessor >= 0 && indiceProfessor < professores.size()) {
-            professores.remove(indiceProfessor);
-            System.out.println("Professor removido com sucesso.");
-        } else {
-            System.out.println("indice invalido.");
+        private static void excluirItemProfessores() {
+            Scanner teclado = new Scanner(System.in);
+            ListatProfessores();
+            System.out.println("Digite o indice do professor que deseja remover:");
+            int indiceProfessor = teclado.nextInt();
+    
+            if (indiceProfessor >= 0 && indiceProfessor < professores.size()) {
+                professores.remove(indiceProfessor);
+                System.out.println("Professor removido com sucesso.");
+            } else {
+                System.out.println("indice invalido.");
+            }
         }
-    }
     private static void MarcarComoConcluido() {
         Scanner teclado = new Scanner(System.in);
         ListarCursos();
