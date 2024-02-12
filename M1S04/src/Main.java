@@ -174,7 +174,7 @@ public class Main {
             System.out.println("Índice inválido.");
         }
     }
-    
+
     public static void ListarConcluidos() {
         if (!cursosConcluidos.isEmpty()) {
             System.out.println("Cursos Concluídos:");
