@@ -1,29 +1,32 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         List<Jogador> ranking = new ArrayList<>();
 
-        Jogador jogador1 = new Jogador("Fulano", 18, 199, 8);
-        Jogador jogador2 = new Jogador("Beltrano", 16, 183, 3);
-        Jogador jogador3 = new Jogador("Sicrano", 7, 173, 8);
-        Jogador jogador4 = new Jogador("Fulano de tal", 9, 152, 5);
-        Jogador jogador5 = new Jogador("Beltrano de tal", 47, 123, 6);
+        // Jogadores
+        ranking.add(new Jogador("Fulano", 18, 199, 8));
+        ranking.add(new Jogador("Beltrano", 16, 183, 3));
+        ranking.add(new Jogador("Sicrano", 7, 173, 8));
+        ranking.add(new Jogador("Fulano de tal", 9, 152, 5));
+        ranking.add(new Jogador("Beltrano de tal", 47, 123, 6));
 
-        ranking.add(jogador1);
-        ranking.add(jogador2);
-        ranking.add(jogador3);
-        ranking.add(jogador4);
-        ranking.add(jogador5);
+        // Crtiando novo jogador/
+        Jogador novoJogador = new Jogador("Novo Jogador", 25, 210, 7);
+        ranking.add(novoJogador);
 
         // Organiza os jogadores pela pontuação
-        ranking.sort((j1, j2) -> Integer.compare(j2.getPontuacao(), j1.getPontuacao()));
+        ranking.sort(Comparator.comparingInt(Jogador::getPontuacao).reversed());
 
-        // printa tudos os jogadores:
-        for (int i = 0; i < ranking.size(); i++) {
-            Jogador jogador = ranking.get(i);
-            System.out.println("Ranking " + (i + 1) + ": " + jogador.getNome() + " - Pontuação: " + jogador.getPontuacao());
+        // limita a lista aos top 10 jogadores
+        List<Jogador> top10 = ranking.subList(0, Math.min(ranking.size(), 10));
+
+        // ranking dos TOP10 jogadores
+        for (int i = 0; i < top10.size(); i++) {
+            Jogador jogador = top10.get(i);
+            System.out.println(jogador.getNome() + " - Posição: " + (i + 1));
         }
     }
 }
