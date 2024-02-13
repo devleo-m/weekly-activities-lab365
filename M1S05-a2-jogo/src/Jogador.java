@@ -12,6 +12,13 @@ public class Jogador {
         this.numeroTentativas = numeroTentativas;
     }
 
+    public Jogador(String nome) { //Mais um construtor para a class JOGO
+        this.nome = nome;
+        this.idade = 0;  // Idade padrão, você pode ajustar conforme necessário
+        this.pontuacao = 0;
+        this.numeroTentativas = 0;
+    }
+
     //Metodos
     public void adicionaPontos(int pontos){
         this.pontuacao += pontos;
@@ -24,6 +31,11 @@ public class Jogador {
     }
     public void adicionaTentativa(){
         this.numeroTentativas++;
+    }
+
+    //P/JOGO
+    public void incrementarPontuacao() {
+        this.pontuacao++;
     }
 
     //*****************************************************************************************************************//
