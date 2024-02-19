@@ -3,6 +3,8 @@ import java.util.Scanner;
 public class Jogo {
     private Jogador melhorJogador;
     private int numeroJogadas;
+    private int pontos;
+
 
     public Jogo() {
         this.melhorJogador = null;
@@ -60,6 +62,33 @@ public class Jogo {
         System.out.println("Melhor jogador: " + melhorJogador.getNome());
         System.out.println("Número total de jogadas: " + numeroJogadas);
     }
+
+    //Sobrecarga jogar ex+ 7;
+    public void jogar(int num) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Gerar um número aleatório entre 0 e num
+        int numeroAleatorio = (int) (Math.random() * (num + 1));
+
+        System.out.println("Bem-vindo ao Jogo Sobrecarga ex7");
+        System.out.println("Escolha um número do tipo inteiro de 0 até " + num + ": ");
+        int escolhaJogador = scanner.nextInt();
+
+        if (escolhaJogador >= 0 && escolhaJogador <= num) {
+            if (escolhaJogador == numeroAleatorio) {
+                System.out.println("Parabéns! Você acertou. Ganhou 1 ponto.");
+                pontos++;
+            } else {
+                System.out.println("OPAAA! Você errou. Perdeu 1 ponto.");
+                pontos--;
+            }
+        } else {
+            System.out.println("Escolha um número válido entre 0 e " + num + ".");
+        }
+
+        System.out.println("Pontuação atual: " + pontos);
+    }
+    //atividade do card 7 acimaaaa ----------
 
     private int resultadoRodada(int escolhaJogador1, int escolhaJogador2, Jogador jogador1, Jogador jogador2) {
         if (escolhaJogador1 == escolhaJogador2) {
